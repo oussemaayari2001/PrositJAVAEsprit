@@ -6,16 +6,17 @@ public class Zoo {
     Animal[] animals;
     String name;
     String city;
-    int nbrCages;
+    //Instruction 14
+   final int nbrCages=25;
 
     public Zoo() {
     }
-
-    public Zoo(String name, String city, int nbrCages) {
+//Instruction 14
+    public Zoo(String name, String city) {
         animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
+   //     this.nbrCages = nbrCages;
     }
     void displayzoo(){
         System.out.println(
@@ -69,19 +70,53 @@ public class Zoo {
     }
     boolean removeAnimal(Animal animal) {
         int animalIndex = searchAnimal(animal);
-
+        int len=animals.length;
         if (animalIndex != -1) {
 
-            for (int i = animalIndex; i < nbrCages - 1; i++) {
+            for (int i = animalIndex; i < len - 1; i++) {
                 animals[i] = animals[i + 1];
             }
             animals[nbrCages - 1] = null;
-            nbrCages--;
+            len -= 1   ;
             return true;
         } else {
+
             return false;
         }
     }
+   //Instruction 16
+    static Zoo comparerZoo(Zoo z1,Zoo z2){
+      int zoo1NbAnimals =0 ;
+      int zoo2NbAnimals =0 ;
+
+        for (Animal animal : z1.animals) {
+            if (animal != null) {
+                ++zoo1NbAnimals;
+            }
+        }
+        for (Animal animal : z2.animals) {
+            if (animal != null) {
+                ++zoo2NbAnimals;
+            }
+        }
+        if (zoo1NbAnimals > zoo2NbAnimals) {
+            return  z1;
+        }
+        else if(zoo1NbAnimals< zoo2NbAnimals){
+            return z2;
+        }
+        return null ;
+    }
+    //Instruction 15
+    boolean isZooFull(){
+      int nbAnimals=0;
+        for (Animal animal : animals) {
+            if (animal != null) {
+                ++nbAnimals;
+            }
+        }
+        return this.nbrCages == nbAnimals;
+  }
     @Override
     public String toString() {
         return "Zoo{" +

@@ -54,7 +54,7 @@ public class ZooManagement {
         Animal et Zoo
          */
         Animal lion=new Animal("Marsh Pride","Lion0",10,false);
-        Zoo myZoo=new Zoo("Belvidere","Tunis",25);
+        Zoo myZoo=new Zoo("Belvidere","Tunis");
 
         //Instruction8
         myZoo.displayzoo();
@@ -69,56 +69,46 @@ public class ZooManagement {
         Instruction 9
         pour afficher les informations correctement avec ces deux instructions ,il faut redeinir la methode toString() de sorte qu'elle retourne  les attributs de la classe en chaine de caractére
          */
+        /*
         System.out.println(myZoo);
         System.out.println(myZoo.toString());
         System.out.println(lion);
         System.out.println(lion.toString());
+        */
+
         myZoo.addAnimal(new Animal("Mapogo lions","Lion1",12,true));
         myZoo.addAnimal(new Animal("Mapogo lions","Lion2",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion3",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion4",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion5",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion6",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion7",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion8",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion9",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion10",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion11",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion12",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion13",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion14",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion15",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion16",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion17",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion18",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion19",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion20",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion21",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion22",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion23",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion24",12,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion24",15,true));
-        myZoo.addAnimal(new Animal("Mapogo lions","Lion26",12,true));
+
+
+
 System.out.println(Arrays.toString(myZoo.animals));
 /*
 Instruction 10
 on remarque que l'ajout de lion26 a renvoyé false car le zoo avait atteint sa capacité maximale de 25 cages.
  */
-System.out.println(myZoo.searchAnimal(new Animal("Mapogo lions","Lion24",12,true)));
-System.out.println(myZoo.searchAnimal(new Animal("Mapogo lions","Lion24",12,true)));
 
-System.out.println(myZoo.searchAnimal(new Animal("Mapogo lions","Lion26",12,true)));
 /*
 Instruction 11: Il rentre toujours l'animal qui la trouvée le premier (le lion24 est ajouté 2 fois)
  */
 /*
         Instruction 12:pour Ajouter un animal une seule fois (un animal est unique) dans un zoo
         il faut modifier la methode d'ajout de sorte qu'on utilise la méthode de recherche searchAnimal() que l'on deja defini
-/*
+  /*
         Instruction 13 dans la classe Zoo
   */
+        /*
         System.out.println(myZoo.removeAnimal(new Animal("Mapogo lions","Lion2",12,true)));
         System.out.println(Arrays.toString(myZoo.animals));
+   */
+        //Instruction 14
+        System.out.println(myZoo.isZooFull());
+        //Instruction 15
+        Zoo zoo2=new Zoo("zoo2","bizerte");
+        zoo2.addAnimal(new Animal("Mapogo lions","Lion3",12,true));
+        zoo2.addAnimal(new Animal("Mapogo lions","Lion4",12,true));
+        zoo2.addAnimal(new Animal("Mapogo lions","Lion5",12,true));
+        System.out.println(Zoo.comparerZoo(myZoo,zoo2));
+
     }
 }
 
