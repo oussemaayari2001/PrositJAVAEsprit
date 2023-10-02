@@ -18,7 +18,7 @@ public class Zoo {
 
     private  String city;
     //Instruction 14
-   final int nbrCages=25;
+   static final int nbrCages=25;
 
     public Zoo() {
     }
