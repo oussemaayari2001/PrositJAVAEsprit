@@ -1,6 +1,9 @@
-package TP0;
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+
+
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class ZooManagement {
     int nbrCages = 20;
@@ -81,7 +84,7 @@ public class ZooManagement {
 
 
 
-System.out.println(Arrays.toString(myZoo.animals));
+System.out.println(Arrays.toString(myZoo.getAnimals()));
 /*
 Instruction 10
 on remarque que l'ajout de lion26 a renvoyé false car le zoo avait atteint sa capacité maximale de 25 cages.
@@ -108,7 +111,16 @@ Instruction 11: Il rentre toujours l'animal qui la trouvée le premier (le lion2
         zoo2.addAnimal(new Animal("Mapogo lions","Lion4",12,true));
         zoo2.addAnimal(new Animal("Mapogo lions","Lion5",12,true));
         System.out.println(Zoo.comparerZoo(myZoo,zoo2));
-
+            //Instruction 17
+        System.out.println(zoo2.addAnimal(new Animal("Mapogo lionssss","Lion5",12,true)));
+            //Intruction 18 : on ajoute private pour tous les attributs du classe Animal et Zoo et
+        // on generate getter and setter and set the conditions on the setter d'attribut age et attribut nom et
+        // on change le constructeur parametree de classe animal pour que lorsque on creeer un objet avec le constructeur parametree
+        // il soit adaptable au conditions
+        zoo2.addAnimal(new Animal("Mapogo lions","Lion6",-1,true));
+        zoo2.addAnimal(new Animal("abc family","",12,true));
+        System.out.println(Arrays.toString(zoo2.getAnimals()));
+        //Instruction 19 on creer les deux package
     }
 }
 

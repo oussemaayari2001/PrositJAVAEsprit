@@ -1,11 +1,22 @@
-package TP0;
-
-import java.util.Arrays;
+package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
-    Animal[] animals;
-    String name;
-    String city;
+   private Animal[] animals;
+   private String name;
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    private  String city;
     //Instruction 14
    final int nbrCages=25;
 
@@ -18,7 +29,7 @@ public class Zoo {
         this.city = city;
    //     this.nbrCages = nbrCages;
     }
-    void displayzoo(){
+    public void displayzoo(){
         System.out.println(
                 "name : "+this.name+" , "+"city :"+this.city+" ,nbrCages= "+nbrCages
 
@@ -38,16 +49,17 @@ public class Zoo {
 
 
    */
-  boolean addAnimal(Animal animal){
-      if (searchAnimal(animal) == -1) {
-          for (int i = 0; i < this.nbrCages; i++) {
-              if (this.animals[i] == null) {
-                  this.animals[i]=animal;
-                  return true;
+  public boolean addAnimal(Animal animal){
+      if(!isZooFull()) {
+       if (searchAnimal(animal) == -1) {
+              for (int i = 0; i < this.nbrCages; i++) {
+                  if (this.animals[i] == null) {
+                      this.animals[i] = animal;
+                      return true;
+                  }
               }
           }
       }
-
       return  false;
   }
     void displayAnimals(){
@@ -62,7 +74,7 @@ public class Zoo {
 
     int searchAnimal(Animal animal){
         for (int i = 0; i <this.nbrCages ; i++) {
-            if (animals[i]!=null && animals[i].name == animal.name) {
+            if (animals[i]!=null && animals[i].getName().equals(animal.getName())) {
                 return i;
             }
         }
@@ -85,7 +97,7 @@ public class Zoo {
         }
     }
    //Instruction 16
-    static Zoo comparerZoo(Zoo z1,Zoo z2){
+    public static Zoo comparerZoo(Zoo z1, Zoo z2){
       int zoo1NbAnimals =0 ;
       int zoo2NbAnimals =0 ;
 
@@ -108,7 +120,7 @@ public class Zoo {
         return null ;
     }
     //Instruction 15
-    boolean isZooFull(){
+    public boolean isZooFull(){
       int nbAnimals=0;
         for (Animal animal : animals) {
             if (animal != null) {
